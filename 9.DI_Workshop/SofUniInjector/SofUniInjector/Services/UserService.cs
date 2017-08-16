@@ -9,10 +9,10 @@ namespace SofUniInjector.Services
 {
     public class UserService : IUserService
     {
-        private readonly IUserReposotory _userrepo;
+        private readonly INeshtoSIInterface _userrepo;
         private readonly ISoftUniReposotory _softUnirepo;
 
-        public UserService(IUserReposotory userrepo, ISoftUniReposotory softUnirepo)
+        public UserService(INeshtoSIInterface userrepo, ISoftUniReposotory softUnirepo)
         {
             this._userrepo = userrepo;
             this._softUnirepo = softUnirepo;     

@@ -44,10 +44,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Container.cs" />
+    <Compile Include="Core\RegisteringModules\AbbstractRegisteringModule.cs" />
+    <Compile Include="Core\RegisteringModules\AttributeRegisteringModule.cs" />
     <Compile Include="Core\RegisteringModules\IregisteringModule.cs" />
     <Compile Include="Core\RegisteringModules\ManuelRegisterModule.cs" />
     <Compile Include="Core\RegisteringModules\SingleImplementationModule.cs" />
+    <Compile Include="Reposotires\DefaultNeshtoSiReposotory.cs" />
+    <Compile Include="Reposotires\INeshtoSIInterface.cs" />
+    <Compile Include="Core\Attributes\InjectionCandidateAttribute.cs" />
     <Compile Include="Reposotires\Useleess.cs" />
+    <Compile Include="Resources\Vars.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Vars.resx</DependentUpon>
+    </Compile>
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reposotires\DefaultPaymentReposotory.cs" />
@@ -62,7 +72,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Vars.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Vars.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

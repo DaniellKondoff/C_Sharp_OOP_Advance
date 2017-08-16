@@ -7,15 +7,13 @@ using System.Threading.Tasks;
 
 namespace SofUniInjector.Core.RegisteringModules
 {
-    public class SingleImplementationModule : IregisteringModule
+    public class SingleImplementationModule : AbbstractRegisteringModule
     {
-        private Assembly Assembly { get; }
-        public SingleImplementationModule(Assembly assembly)
+        public SingleImplementationModule(Assembly assembly) : base(assembly)
         {
-            this.Assembly = assembly;
         }
 
-        public void Register(IDictionary<Type, Type> types, IDictionary<Type, object> objects)
+        public override void Register(IDictionary<Type, Type> types, IDictionary<Type, object> objects)
         {
             Type[] allTypes = this.Assembly.GetTypes();
             Type[] abstractions = allTypes.Where(t => t.GetTypeInfo().IsInterface)

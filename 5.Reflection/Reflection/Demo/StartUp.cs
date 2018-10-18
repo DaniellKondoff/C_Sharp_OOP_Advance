@@ -11,13 +11,15 @@ namespace Demo
     {
         static void Main(string[] args)
         {
+
+            Console.WriteLine(typeof(int));
             //Type listYpe = typeof(List<>);
             //Console.WriteLine(listYpe.Name);
             //Console.WriteLine(listYpe.FullName);
             //Console.WriteLine(listYpe.Namespace);
 
-            Assembly currentAssembly = Assembly.GetExecutingAssembly();
-            Type[] allTypes = currentAssembly.GetTypes();
+            //Assembly currentAssembly = Assembly.GetExecutingAssembly();
+            //Type[] allTypes = currentAssembly.GetTypes();
 
             //foreach (var type in allTypes)
             //{
